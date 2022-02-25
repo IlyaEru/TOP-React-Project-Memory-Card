@@ -29,13 +29,13 @@ export default function Main() {
       .map(({ value }) => value);
     setImageSrc(shuffled);
   };
-  const url = `https://pixabay.com/api/?key=25876679-d5a33d89c7d57aa8868e07a09&q=${cardsTheme}&pretty=true&per_page=14`;
+  const url = `https://pixabay.com/api/?key=25876679-d5a33d89c7d57aa8868e07a09&q=${cardsTheme}&per_page=14`;
 
   const fetchImage = async () => {
     const response = await fetch(url);
     const data = await response.json();
     const newImagesArray = [];
-    data.hits.map((hit) => newImagesArray.push(hit.largeImageURL));
+    data.hits.map((hit) => newImagesArray.push(hit.webformatURL));
     setImageSrc(newImagesArray);
   };
 
