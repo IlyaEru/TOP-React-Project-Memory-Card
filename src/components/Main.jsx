@@ -8,6 +8,7 @@ export default function Main() {
   const [imagesSrc, setImageSrc] = useState([]);
   const [loading, setLoading] = useState(true);
   const [score, setScore] = useState({ 'current-score': 0, 'best-score': 0 });
+  const [cards, setCards] = useState(14);
 
   const handleScoreReset = () => {
     setScore({ 'current-score': 0, 'best-score': score['best-score'] });
@@ -29,7 +30,7 @@ export default function Main() {
       .map(({ value }) => value);
     setImageSrc(shuffled);
   };
-  const url = `https://pixabay.com/api/?key=25876679-d5a33d89c7d57aa8868e07a09&q=${cardsTheme}&per_page=14`;
+  const url = `https://pixabay.com/api/?key=25876679-d5a33d89c7d57aa8868e07a09&q=${cardsTheme}&per_page=${cards}`;
 
   const fetchImage = async () => {
     const response = await fetch(url);
@@ -39,14 +40,35 @@ export default function Main() {
     setImageSrc(newImagesArray);
   };
 
-  const handleThemeChange = () => {
-    const newTheme = document.querySelector('#card-theme-input').value;
-    setCardsTheme(newTheme);
+  const handleCardsChange = () => {
+    let cardsInput = Number(document.querySelector('#card-number-input').value);
+    if (cardsInput < 1) {
+      cardsInput = 3;
+    } else if (cardsInput > 30) {
+      cardsInput = 30;
+    } else if (!cardsInput) {
+      cardsInput = cards;
+    }
+    setCards(cardsInput);
   };
 
-  const handleKeyPress = (event) => {
+  const handleThemeChange = () => {
+    handleCardsChange();
+    const newTheme = document.querySelector('#card-theme-input').value;
+    setCardsTheme(newTheme);
+    handleChildStateReset();
+    handleScoreReset();
+  };
+
+  const handleThemeKeyPress = (event) => {
     if (event.key === 'Enter') {
       handleThemeChange();
+    }
+  };
+
+  const handleCardKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      handleCardsChange();
     }
   };
 
@@ -54,7 +76,7 @@ export default function Main() {
     setLoading(true);
     fetchImage();
     setLoading(false);
-  }, [cardsTheme]);
+  }, [cardsTheme, cards]);
 
   if (loading) {
     return (
@@ -75,10 +97,16 @@ export default function Main() {
   return (
     <main>
       <div className="input">
-        <div className="input-wraper">
-          <input onKeyPress={handleKeyPress} placeholder=" " id="card-theme-input" type="text" />
-          <label htmlFor="card-theme-input">
+        <div className="input-wraper theme-input-wraper">
+          <input onKeyPress={handleThemeKeyPress} placeholder=" " id="card-theme-input" type="text" />
+          <label className="theme-label" htmlFor="card-theme-input">
             Choose Theme
+          </label>
+        </div>
+        <div className="input-wraper card-input-wraper">
+          <input defaultValue={cards} min={1} max={30} onKeyPress={handleCardKeyPress} placeholder=" " id="card-number-input" type="number" />
+          <label className="cards-label" htmlFor="card-number-input">
+            Cards
           </label>
         </div>
         <button onClick={handleThemeChange} type="button" className="btn">Confirm</button>

@@ -18,7 +18,8 @@ main {
         position: absolute;
       }
     }
-    #card-theme-input {
+    #card-theme-input,
+    #card-number-input {
       background: transparent;
       border: none;
       border-bottom: 2px solid #b64fc8ad;
@@ -30,13 +31,22 @@ main {
       }
       &:focus,
       &:not(:placeholder-shown) {
-        & ~ label {
+        & ~ .theme-label {
           transform: translateX(-105%);
           @media (max-width: 800px) {
-            transform: scale(0.6) translateX(-140%);
+            // transform: scale(0.6) translateX(-140%);
+            transform: scale(0.8) translateY(-90%);
           }
         }
+        & ~ .cards-label {
+          transform: scale(0.8) translateY(-90%);
+        }
       }
+    }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
     }
   }
   .result-wraper {
