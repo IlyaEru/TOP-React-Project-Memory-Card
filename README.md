@@ -2,7 +2,7 @@
 
 ## <a href="https://ilyaeru.github.io/TOP-React-Project-Memory-Card/">live Preview</a><br>
 
-<a href="https://www.flaticon.com/free-icons/card" title="card icons">Icon created by Victoruler=</a>
+<a href="https://www.flaticon.com/free-icons/card" title="card icons">Icon created by Victoruler</a>
 
 # _My Work_
 
