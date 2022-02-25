@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/TOP-React-Project-Memory-Card/static/css/main.4b6c8cdc.css",
-    "main.js": "/TOP-React-Project-Memory-Card/static/js/main.3cc96f73.js",
+    "main.js": "/TOP-React-Project-Memory-Card/static/js/main.aaf866fe.js",
     "static/media/Righteous-Regular.ttf": "/TOP-React-Project-Memory-Card/static/media/Righteous-Regular.fd0110471f2228c1808a.ttf",
     "index.html": "/TOP-React-Project-Memory-Card/index.html",
     "static/media/x.svg": "/TOP-React-Project-Memory-Card/static/media/x.4bbc1561b5ac2fe2bed3c0ca173ef19e.svg",
     "main.4b6c8cdc.css.map": "/TOP-React-Project-Memory-Card/static/css/main.4b6c8cdc.css.map",
-    "main.3cc96f73.js.map": "/TOP-React-Project-Memory-Card/static/js/main.3cc96f73.js.map"
+    "main.aaf866fe.js.map": "/TOP-React-Project-Memory-Card/static/js/main.aaf866fe.js.map"
   },
   "entrypoints": [
     "static/css/main.4b6c8cdc.css",
-    "static/js/main.3cc96f73.js"
+    "static/js/main.aaf866fe.js"
   ]
 }
