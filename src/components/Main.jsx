@@ -42,7 +42,7 @@ export default function Main() {
 
   const handleCardsChange = () => {
     let cardsInput = Number(document.querySelector('#card-number-input').value);
-    if (cardsInput < 1) {
+    if (cardsInput < 3) {
       cardsInput = 3;
     } else if (cardsInput > 30) {
       cardsInput = 30;
