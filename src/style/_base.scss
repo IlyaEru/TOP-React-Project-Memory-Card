@@ -1,0 +1,37 @@
+$main-background-color: #202124;
+$main-btn-color: #03dac6;
+:root {
+  font-size: calc(0.625rem + 0.4vw);
+}
+* {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: white;
+}
+body,
+#root,
+.App {
+  min-height: 100vh;
+  width: 100%;
+  background: $main-background-color;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+.btn {
+  background-color: transparent;
+  align-items: center;
+  border: 1px solid $main-btn-color;
+  border-radius: 0.25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 250ms;
+  &:hover,
+  &:focus {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  &:active {
+    transform: scale(0.97);
+  }
+}

@@ -1,0 +1,60 @@
+@font-face {
+  font-family: righteous;
+  src: url("./Righteous-Regular.ttf");
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 1rem;
+
+  .hero {
+    font-family: righteous;
+    text-align: center;
+    letter-spacing: 2px;
+    color: #b64fc8;
+    text-shadow: -2px 4px 3px black, -5px -2px 3px black, 1px -3px 3px black;
+  }
+  .rules-btn {
+    height: 2rem;
+    width: 10rem;
+    font-weight: bold;
+  }
+  .rules {
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.7); /* Black w/ opacity */
+    .rules-content {
+      background: #202124;
+      margin: 15% auto; /* 15% from the top and centered */
+      padding: 20px;
+      border: 1px solid #888;
+      width: fit-content;
+      @media (max-width: 800px) {
+        width: 60%;
+      }
+      position: relative;
+      padding: 3rem;
+      font-size: 1.5rem;
+    }
+    .header .rules .close-rules-btn {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    .close-rules-btn {
+      position: absolute;
+      top: 0;
+      right: 0;
+      img {
+        filter: invert(1);
+      }
+    }
+  }
+}
